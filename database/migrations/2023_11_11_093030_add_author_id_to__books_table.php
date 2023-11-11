@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('books', function (Blueprint $table) {
+        Schema::table('_books', function (Blueprint $table) {
             //buat kolom author_id
             $table->foreignIdFor(\App\Models\Author::class)
-                ->nullable()
-                ->after('id')
-                ->references('id')
-                ->on('authors')
-                ->nullOnDelete();
+            ->nullable()
+            ->after('id')
+            ->references('id')
+            ->on('authors')
+            ->nullOnDelete();
         });
     }
 
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('books', function (Blueprint $table) {
+        Schema::table('_books', function (Blueprint $table) {
             //hapus kolom author_id
             $table->dropColumn('author_id');
         });

@@ -8,7 +8,7 @@ class MahasiswaController extends Controller
 {
     public function view($npm)
     {
-        $nama = 'Deni';
+        $nama = 'Dia';
 
         return view('mahasiswa.view', compact('npm', 'nama'));
     }
